@@ -1,10 +1,12 @@
 # 🧩 3DS Emulators Compatibility List
 
-A community-maintained compatibility list for 3DS Emulators!  
+A multi-platform compatibility list for Nintendo 3DS Emulators!  
 Here you’ll find real performance and stability reports for many Nintendo 3DS games running on:
 
-- Citra Nightly
+- Citra Canary/Nightly
 - Azahar 
+- Panda3DS
+- Lime3ds
 - Borked3DS
 - And more forks in the future!
 
@@ -12,8 +14,8 @@ Here you’ll find real performance and stability reports for many Nintendo 3DS 
 
 ## 📦 What’s in this repository?
 
-- 🧠 Detailed test results for multiple Citra versions
-- 🌈 Visual compatibility ratings using stars or color codes
+- 🧠 Detailed test results for multiple emulators versions
+- 🌈 Visual compatibility ratings using stars and color codes
 - 📷 (Coming soon) Screenshots and videos of games in action
 - 🤝 A guide for community contributions
 
@@ -36,6 +38,8 @@ All games are tested on the following PC specs:
 - OS: Windows 11 
 - Emulator builds: latest available at time of testing (unless noted otherwise)
 
+> This specs are for ash64's PC and may not include in every single test from the list
+
 ---
 
 ## 📋 Compatibility rating system
@@ -57,6 +61,6 @@ This project is licensed under the Creative Commons Attribution-NonCommercial-Sh
 
 ---
 
-## 💜 Made with love by [ash64](https://github.com/ashleytarifa)
+### 💜 Made with love by [ash64](https://github.com/ashleytarifa)
 
 (*ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
