@@ -1,0 +1,53 @@
+:root {
+  --citra-purple: #6a3d9a;
+  --citra-dark: #1a1a2e;
+  --citra-light: #f8f9fa;
+  --citra-accent: #9c6ad6;
+}
+
+body {
+  background-color: var(--citra-dark);
+  color: var(--citra-light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+
+.main {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+footer a {
+  color: var(--citra-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--citra-purple), #4a148c);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+}
+
+header img {
+ height: 80px;
+ margin: 1rem;
+}
