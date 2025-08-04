@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,56 +9,281 @@
     <link rel="icon"
         href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Citra_Logo.svg/1118px-Citra_Logo.svg.png"
         type="image/x-icon">
+    <meta name="description" content="A multi-platform compatibility list for Nintendo 3DS Emulators">
+    <meta property="og:title" content="3DS Emulators Compatibility List">
+    <meta property="og:description" content="A multi-platform compatibility list for Nintendo 3DS Emulators">
+    <meta property="og:image" content="https://ashleytarifa.github.io/3dsemu-compatibility-list/assets/banner.png">
+    <meta property="og:url" content="https://ashleytarifa.gitub.io">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:type" content="website">
 </head>
+
 <body>
+    <div id="orientation-warning">
+        <h2>Mobile Screen Detected</h2>
+        <p>Please rotate your device to landscape mode for a better viewing experience.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Citra_Logo.svg/1118px-Citra_Logo.svg.png">
+    </div>
+
     <header class="header">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Citra_Logo.svg/1118px-Citra_Logo.svg.png"
-            alt="Citra Logo">
         <h1>3DS Emulators Compatibility List</h1>
     </header>
-    <section class="main">
-        <p>A detailed, community-driven list of 3DS emulators compatibility across forks and platforms. (Coming Soon)</p>
-    </section>
-    <section class="main">
-        <h2>Loading, this may take forever...</h2>
-        <div class="progress-bar">
-            <div class="fill"></div>
+
+    <main>
+        <section class="intro">
+            <h3>Hey! This project is still under construction, if you want to contribute with anything, check this <a href="https://github.com/ashleytarifa/3dsemu-compatibility-list" target="_blank">project's page on GitHub!</a></h3>
+        </section>
+        <section class="intro">
+            <h2>Welcome to the 3DS Emulators Compatibility List!</h2>
+            <p> This is your go-to resource for reliable, real-world compatibility testing of Nintendo 3DS games across
+                multiple emulators and platforms. Whether you're playing on PC or mobile, we've got you covered! </p>
+            <p>Here’s what you’ll find:</p>
+            <ul>
+                <li>🛠️ Thorough test results from emulators like <strong>Citra</strong> (Nightly/Canary),
+                    <strong>Azahar</strong>, <strong>Lime3DS</strong>, <strong>Panda3DS</strong>, and more.</li>
+                <li>⭐ A clean, color-coded star rating system to quickly gauge performance and stability.</li>
+                <li>💻 Transparent information about test environments — so you know exactly how and where games were
+                    tested.</li>
+            </ul>
+            <p> Our mission is to build a clear and accurate picture of 3DS emulator performance — helping you enjoy
+                your favorite games in the smoothest way possible. </p>
+            <p> Use the filters above to browse by <strong>Operating System</strong>, <strong>Emulator</strong> or
+                <strong>Game Title</strong>, and discover how your favorite titles perform! </p>
+        </section>
+
+        <section class="intro">
+            <h2>How the Compatibility Rating Works</h2>
+            <table class="rating-key">
+                <thead>
+                    <tr>
+                        <th>Stars</th>
+                        <th>Status</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="s5">⭐⭐⭐⭐⭐</td>
+                        <td>Perfect</td>
+                        <td>Flawless gameplay with no visual/audio issues.</td>
+                    </tr>
+                    <tr>
+                        <td class="s4">⭐⭐⭐⭐</td>
+                        <td>Playable</td>
+                        <td>Minor glitches or slowdowns, but fully playable.</td>
+                    </tr>
+                    <tr>
+                        <td class="s3">⭐⭐⭐</td>
+                        <td>Starts</td>
+                        <td>Game boots and plays but may crash or have major bugs.</td>
+                    </tr>
+                    <tr>
+                        <td class="s2">⭐⭐</td>
+                        <td>Intro/Menu</td>
+                        <td>Loads menu but crashes before gameplay.</td>
+                    </tr>
+                    <tr>
+                        <td class="s1">⭐</td>
+                        <td>Broken</td>
+                        <td>Doesn't load or immediately crashes.</td>
+                    </tr>
+                    <tr>
+                        <td class="s0">✩</td>
+                        <td>Not tested</td>
+                        <td>No test results available yet.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="filters">
+            <h2>Filter by OS: <span id="currentFilter">Windows</span></h2>
+            <div class="filter-bar">
+                <button id="filterBtnWindows" class="active">Windows</button>
+                <button id="filterBtnLinux">Linux</button>
+                <button id="filterBtnAndroid">Android</button>
+            </div>
+
+            <h2>Filter by Emulator: <span id="currentEmulator">Citra</span></h2>
+            <div class="emulator-filter">
+                <button id="filterBtnCitra" class="active">Citra</button>
+                <button id="filterBtnLime3ds">Lime3DS</button>
+                <button id="filterBtnAzahar">Azahar</button>
+                <button id="filterBtnPanda3ds">Panda3DS</button>
+                <button id="filterBtnMikage">Mikage</button>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for a game..." />
+            </div>
+        </section>
+
+        <table class="compatibility">
+            <thead>
+                <tr>
+                    <th rowspan="2">Game</th>
+                    <th rowspan="2">Region</th>
+                    <th colspan="18" class="citra">Citra</th>
+                    <th colspan="18" class="lime3ds">Lime3DS</th>
+                    <th colspan="18" class="azahar">Azahar</th>
+                    <th colspan="18" class="panda3ds">Panda3DS</th>
+                    <th colspan="18" class="mikage">Mikage</th>
+                </tr>
+                <tr>
+                    <!-- Citra -->
+                    <!-- Compatibility-->
+                    <th class="windows citra">Compatibility</th>
+                    <th class="linux citra">Compatibility</th>
+                    <th class="android citra">Compatibility</th>
+                    <!-- Emulator Version -->
+                    <th class="windows citra">Emu Version</th>
+                    <th class="linux citra">Emu Version</th>
+                    <th class="android citra">Emu Version</th>
+                    <!-- Game Release Date-->
+                    <th class="windows citra">Game Release</th>
+                    <th class="linux citra">Game Release</th>
+                    <th class="android citra">Game Release</th>
+                    <!-- Test Date -->
+                    <th class="windows citra">Test Date</th>
+                    <th class="linux citra">Test Date</th>
+                    <th class="android citra">Test Date</th>
+                    <!-- Game Tested By -->
+                    <th class="windows citra">Tested by</th>
+                    <th class="linux citra">Tested by</th>
+                    <th class="android citra">Tested by</th>
+                    <!-- Emulation Notes -->
+                    <th class="windows citra">Notes</th>
+                    <th class="linux citra">Notes</th>
+                    <th class="android citra">Notes</th>
+
+                    <!-- Lime3DS -->
+                    <!-- Compatibility-->
+                    <th class="windows lime3ds">Compatibility</th>
+                    <th class="linux lime3ds">Compatibility</th>
+                    <th class="android lime3ds">Compatibility</th>
+                    <!-- Emulator Version -->
+                    <th class="windows lime3ds">Emu Version</th>
+                    <th class="linux lime3ds">Emu Version</th>
+                    <th class="android lime3ds">Emu Version</th>
+                    <!-- Game Release Date-->
+                    <th class="windows lime3ds">Game Release</th>
+                    <th class="linux lime3ds">Game Release</th>
+                    <th class="android lime3ds">Game Release</th>
+                    <!-- Test Date -->
+                    <th class="windows lime3ds">Test Date</th>
+                    <th class="linux lime3ds">Test Date</th>
+                    <th class="android lime3ds">Test Date</th>
+                    <!-- Game Tested By -->
+                    <th class="windows lime3ds">Tested by</th>
+                    <th class="linux lime3ds">Tested by</th>
+                    <th class="android lime3ds">Tested by</th>
+                    <!-- Emulation Notes -->
+                    <th class="windows lime3ds">Notes</th>
+                    <th class="linux lime3ds">Notes</th>
+                    <th class="android lime3ds">Notes</th>
+
+                    <!-- Azahar -->
+                    <!-- Compatibility-->
+                    <th class="windows azahar">Compatibility</th>
+                    <th class="linux azahar">Compatibility</th>
+                    <th class="android azahar">Compatibility</th>
+                    <!-- Emulator Version -->
+                    <th class="windows azahar">Emu Version</th>
+                    <th class="linux azahar">Emu Version</th>
+                    <th class="android azahar">Emu Version</th>
+                    <!-- Game Release Date-->
+                    <th class="windows azahar">Game Release</th>
+                    <th class="linux azahar">Game Release</th>
+                    <th class="android azahar">Game Release</th>
+                    <!-- Test Date -->
+                    <th class="windows azahar">Test Date</th>
+                    <th class="linux azahar">Test Date</th>
+                    <th class="android azahar">Test Date</th>
+                    <!-- Game Tested By -->
+                    <th class="windows azahar">Tested by</th>
+                    <th class="linux azahar">Tested by</th>
+                    <th class="android azahar">Tested by</th>
+                    <!-- Emulation Notes -->
+                    <th class="windows azahar">Notes</th>
+                    <th class="linux azahar">Notes</th>
+                    <th class="android azahar">Notes</th>
+
+                    <!-- Panda3DS -->
+                    <!-- Compatibility-->
+                    <th class="windows panda3ds">Compatibility</th>
+                    <th class="linux panda3ds">Compatibility</th>
+                    <th class="android panda3ds">Compatibility</th>
+                    <!-- Emulator Version -->
+                    <th class="windows panda3ds">Emu Version</th>
+                    <th class="linux panda3ds">Emu Version</th>
+                    <th class="android panda3ds">Emu Version</th>
+                    <!-- Game Release Date-->
+                    <th class="windows panda3ds">Game Release</th>
+                    <th class="linux panda3ds">Game Release</th>
+                    <th class="android panda3ds">Game Release</th>
+                    <!-- Test Date -->
+                    <th class="windows panda3ds">Test Date</th>
+                    <th class="linux panda3ds">Test Date</th>
+                    <th class="android panda3ds">Test Date</th>
+                    <!-- Game Tested By -->
+                    <th class="windows panda3ds">Tested by</th>
+                    <th class="linux panda3ds">Tested by</th>
+                    <th class="android panda3ds">Tested by</th>
+                    <!-- Emulation Notes -->
+                    <th class="windows panda3ds">Notes</th>
+                    <th class="linux panda3ds">Notes</th>
+                    <th class="android panda3ds">Notes</th>
+
+                    <!-- Mikage -->
+                    <!-- Compatibility-->
+                    <th class="windows mikage">Compatibility</th>
+                    <th class="linux mikage">Compatibility</th>
+                    <th class="android mikage">Compatibility</th>
+                    <!-- Emulator Version -->
+                    <th class="windows mikage">Emu Version</th>
+                    <th class="linux mikage">Emu Version</th>
+                    <th class="android mikage">Emu Version</th>
+                    <!-- Game Release Date-->
+                    <th class="windows mikage">Game Release</th>
+                    <th class="linux mikage">Game Release</th>
+                    <th class="android mikage">Game Release</th>
+                    <!-- Test Date -->
+                    <th class="windows mikage">Test Date</th>
+                    <th class="linux mikage">Test Date</th>
+                    <th class="android mikage">Test Date</th>
+                    <!-- Game Tested By -->
+                    <th class="windows mikage">Tested by</th>
+                    <th class="linux mikage">Tested by</th>
+                    <th class="android mikage">Tested by</th>
+                    <!-- Emulation Notes -->
+                    <th class="windows mikage">Notes</th>
+                    <th class="linux mikage">Notes</th>
+                    <th class="android mikage">Notes</th>
+                </tr>
+            </thead>
+            <tbody id="compatibilityTableBody">
+            </tbody>
+        </table>
+
+        <div id="no-results-message" style="display: none;">
+            <p>Oops! No results found. Maybe try another title or adjust your filters? (｡•́︿•̀｡)</p>
         </div>
-        <style>
-            .progress-bar {
-                width: 80%;
-                height: 12px;
-                background: #eee;
-                border-radius: 6px;
-                margin: 20px auto;
-                overflow: hidden;
-            }
 
-            .fill {
-                width: 10%;
-                height: 100%;
-                background: #9340ff;
-                animation: loading 400s infinite;
-            }
-
-            @keyframes loading {
-                0% {
-                    width: 0%;
-                }
-
-                50% {
-                    width: 99%;
-                }
-
-                100% {
-                    width: 0%;
-                }
-            }
-        </style>
-
-    </section>
+    </main>
 
     <footer>
-        <p>Made with 💜 by ash64 </p>
-        <p><a href="https://github.com/ashleytarifa/3dsemu-compatibility-list">View the project on GitHub</a></p>
+        <p>Made with 💜 by <a href="https://liquidtax.online" target="_blank">ash64</a></p>
+        <p><a href="https://github.com/ashleytarifa/3dsemu-compatibility-list" target="_blank">View the project on
+                GitHub</a></p>
     </footer>
+
+    <!-- Linking to game data -->
+    <script type="module" src="script.js"></script>
+
+    <!-- Linking to main site logic-->
+    <script src="script.js"></script>
+</body>
+
+</html>
