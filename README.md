@@ -24,7 +24,7 @@ Here you’ll find real performance and stability reports for many Nintendo 3DS 
 ## 🔍 View the compatibility list
 
 Access the full list through our GitHub Pages site:  
-📎 [`ashleytarifa.github.io/3dsemu-compatibility-list`](https://ashleytarifa.github.io/3dsemu-compatibility-list) **(Coming Soon!)**
+📎 [`ashleytarifa.github.io/3dsemu-compatibility-list`](https://ashleytarifa.github.io/3dsemu-compatibility-list) **(Under Construction!)**
 
 ---
 
